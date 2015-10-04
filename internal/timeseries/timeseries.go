@@ -141,7 +141,7 @@ func (ts *timeSeries) init(resolutions []time.Duration, f func() Observable, num
 
 	for i := range resolutions {
 		if i > 0 && resolutions[i-1] >= resolutions[i] {
-			log.Print("timeseries: resolutions must be monotonically increasing")
+			log.Print("timeseries: resolutions must be strictly increasing")
 			break
 		}
 		newLevel := new(tsLevel)
